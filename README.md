@@ -3,7 +3,7 @@
 ## How to run?
 
 1. Install docker and docker-compose
-2. To start the service, run the following command from the home folder of the service: `docker-compose up -d --build`
+2. To start the service, run the following command from the home folder of the service: `docker-compose up -d --build`. All the logs will be printed to logs folder output.log file
 3. If you want to run tests, comment out npm start cmd and uncomment npm test cmd in the Dockerfile:
 
 ```Dockerfile
@@ -12,70 +12,7 @@ CMD ["sh", "-c", "npm start > /app/logs/output.log 2>&1"]
 
 ```
 
-4. This endpoint allows users to retrieve information about matches.
-
-   **Endpoint**
-
-   - **URL:** `/matches`
-   - **Method:** GET
-
-   **Request Parameters**
-   No request parameters are required.
-
-   **Response**
-
-   - **Status Code:** 200 OK
-   - **Content Type:** application/json
-
-5. This endpoint allows users to retrieve information about tours.
-
-   **Endpoint**
-
-   - **URL:** `/tours`
-   - **Method:** GET
-
-   **Request Parameters**
-   No request parameters are required.
-
-   **Response**
-
-   - **Status Code:** 200 OK
-   - **Content Type:** application/json
-
-6. This endpoint retrieves matches associated with a specific tour by providing the tour name as a query parameter.
-
-   **Endpoint**
-
-   - **URL:** `/tour/matches`
-   - **Method:** GET
-
-   **Request Parameters**
-
-   - **Name:** name
-   - **Type:** String
-   - **Description:** The name of the tour for which matches are to be retrieved.
-
-   **Response**
-
-   - **Status Code:** 200 OK
-   - **Content Type:** application/json
-
-7. This endpoint retrieves all sports along with their associated tours and matches.
-
-   **Endpoint**
-
-   - **URL:** `/sport/tour/match`
-   - **Method:** GET
-
-   **Request**
-   No request parameters are required.
-
-   **Response**
-
-   - **Status Code:** 200 OK
-   - **Content Type:** application/json
-
-8. This endpoint allows you to create news for a specific match.
+4. This endpoint allows you to create news for a specific match.
 
    **Endpoint**
 
@@ -94,7 +31,7 @@ CMD ["sh", "-c", "npm start > /app/logs/output.log 2>&1"]
    - **Status Code:** 200 OK
    - **Content Type:** application/json
 
-9. This endpoint allows you to create news for a specific tour.
+5. This endpoint allows you to create news for a specific tour.
 
    **Endpoint**
 
@@ -113,25 +50,25 @@ CMD ["sh", "-c", "npm start > /app/logs/output.log 2>&1"]
    - **Status Code:** 200 OK
    - **Content Type:** application/json
 
-10. This endpoint retrieves news related to a specific match.
+6. This endpoint retrieves news related to a specific match.
 
-    **Endpoint**
+   **Endpoint**
 
-    - **URL:** `/news/match`
-    - **Method:** GET
+   - **URL:** `/news/match`
+   - **Method:** GET
 
-    **Request Parameters**
+   **Request Parameters**
 
-    - **matchId (String):** The ID of the match for which news is requested.
+   - **matchId (String):** The ID of the match for which news is requested.
 
-    **Response**
+   **Response**
 
-    - **Status Code:** 200 OK
-    - **Content Type:** application/json
+   - **Status Code:** 200 OK
+   - **Content Type:** application/json
 
-11. This endpoint retrieves news related to a specific tour. (Each news created for a match also belongs to the corresponding tour.)
+7. This endpoint retrieves news related to a specific tour. (Each news created for a match also belongs to the corresponding tour.)
 
-    **Endpoint**
+   **Endpoint**
 
 - **URL:** `/news/tour`
 - **Method:** GET
@@ -145,9 +82,9 @@ CMD ["sh", "-c", "npm start > /app/logs/output.log 2>&1"]
 - **Status Code:** 200 OK
 - **Content Type:** application/json
 
-12. This endpoint retrieves news related to a specific sport. (Each news created for a tour also belongs to the corresponding sport.)
+8. This endpoint retrieves news related to a specific sport. (Each news created for a tour also belongs to the corresponding sport.)
 
-    **Endpoint**
+   **Endpoint**
 
 - **URL:** `/news/sport`
 - **Method:** GET
@@ -155,6 +92,69 @@ CMD ["sh", "-c", "npm start > /app/logs/output.log 2>&1"]
 **Request Parameters**
 
 - sportId (String): The ID of the sport for which news is requested.
+
+**Response**
+
+- **Status Code:** 200 OK
+- **Content Type:** application/json
+
+9. This endpoint allows users to retrieve information about matches.
+
+   **Endpoint**
+
+   - **URL:** `/matches`
+   - **Method:** GET
+
+   **Request Parameters**
+   No request parameters are required.
+
+   **Response**
+
+   - **Status Code:** 200 OK
+   - **Content Type:** application/json
+
+10. This endpoint allows users to retrieve information about tours.
+
+    **Endpoint**
+
+- **URL:** `/tours`
+- **Method:** GET
+
+**Request Parameters**
+No request parameters are required.
+
+**Response**
+
+- **Status Code:** 200 OK
+- **Content Type:** application/json
+
+11. This endpoint retrieves matches associated with a specific tour by providing the tour name as a query parameter.
+
+    **Endpoint**
+
+- **URL:** `/tour/matches`
+- **Method:** GET
+
+**Request Parameters**
+
+- **Name:** name
+- **Type:** String
+- **Description:** The name of the tour for which matches are to be retrieved.
+
+**Response**
+
+- **Status Code:** 200 OK
+- **Content Type:** application/json
+
+12. This endpoint retrieves all sports along with their associated tours and matches.
+
+    **Endpoint**
+
+- **URL:** `/sport/tour/match`
+- **Method:** GET
+
+**Request**
+No request parameters are required.
 
 **Response**
 
